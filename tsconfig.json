@@ -11,13 +11,16 @@
       "./types/index.d.ts"
     ],
     "paths": {
-      "@src/*": ["./src/*"],
+      "@src/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
     "src/**/*.ts",
     "types/**/*.d.ts",
-    "./*.config.ts"
+    "./*.config.ts",
+    "./*.setup.ts"
   ],
   "exclude": [
     "node_modules"
@@ -26,5 +29,5 @@
     "./node_modules/@types",
     "./node_modules/@types",
     "./types/index.d.ts"
-  ],
+  ]
 }

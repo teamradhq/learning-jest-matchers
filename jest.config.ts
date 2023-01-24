@@ -3,6 +3,7 @@ import type { Config } from 'jest';
 const config: Config = {
   testEnvironment: 'node',
   clearMocks: true,
+  setupFilesAfterEnv: ['./jest.setup.ts'],
   collectCoverage: false,
   coverageDirectory: 'coverage',
   coverageReporters: [
