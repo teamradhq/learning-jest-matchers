@@ -30,6 +30,8 @@ declare namespace jest {
    */
   interface Matchers<R, T> {
     toBeDivisibleBy(divisor: number): T;
+
+    toBeISODate(): T;
   }
 
   /**
@@ -39,5 +41,6 @@ declare namespace jest {
   interface ExpectExtendMap {
     setContaining: OwnMatcher<[expected: unknown[]]>;
     toBeDivisibleBy: OwnMatcher<[divisor: number]>;
+    toBeISODate: OwnMatcher<[]>;
   }
 }
