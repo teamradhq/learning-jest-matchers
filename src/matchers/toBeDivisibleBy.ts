@@ -1,4 +1,14 @@
+/**
+ * This is an example of a symmetric matcher.
+ *
+ * @param actual
+ * @param divisor
+ */
 export function toBeDivisibleBy(actual: number, divisor: number) {
+  if (divisor === 0) {
+    throw new TypeError('Divisor must not be zero');
+  }
+
   const pass = actual % divisor === 0;
   if (pass) {
     return {

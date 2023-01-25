@@ -11,9 +11,13 @@ describe('expect.toBeDivisibleBy', () => {
     expect(9).not.toBeDivisibleBy(2);
   });
 
-  it('should fail if the divisor is zero', () => {
+  it('should raise TypeError if the divisor is zero', () => {
     expect.assertions(1);
 
-    expect(9).toBeDivisibleBy(0);
+    const shouldThrow = () => {
+      expect(9).toBeDivisibleBy(0);
+    };
+
+    expect(shouldThrow).toThrow(TypeError);
   });
 });

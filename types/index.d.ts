@@ -20,6 +20,10 @@ type OwnMatcher<Params extends unknown[]> = (
 ) => jest.CustomMatcherResult;
 
 declare namespace jest {
+  interface Expect {
+    setContaining<T>(expected: T[]): Set<T>,
+  }
+
   /**
    * These define the public call signature which describe how
    * the matchers are used in tests.
@@ -33,6 +37,7 @@ declare namespace jest {
    * `expect.extend()` call.
    */
   interface ExpectExtendMap {
+    setContaining: OwnMatcher<[expected: unknown[]]>;
     toBeDivisibleBy: OwnMatcher<[divisor: number]>;
   }
 }

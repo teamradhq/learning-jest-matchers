@@ -1,5 +1,3 @@
-import { toBeDivisibleBy } from '@src/assertions';
+import * as matchers from '@src/matchers';
 
-expect.extend({
-  toBeDivisibleBy,
-});
+expect.extend(matchers);
