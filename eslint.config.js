@@ -83,7 +83,7 @@ const config = {
   settings: {
     'import/resolver': {
       'babel-module': {
-        configFile: './babel.config.js',
+        configFile: './babel.jestConfig.js',
         root: ['./src'],
       },
       typescript: {},

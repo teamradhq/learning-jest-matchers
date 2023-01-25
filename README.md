@@ -52,16 +52,6 @@ Depending on the type of matcher, we will need to extend a combination of the fo
 - `jest.Matchers`
 - `jest.ExpectExtendMap`
 
-We can type our matcher functions as follows:
-
-```typescript
-expect.MatcherFunction < [expected
-:
-unknown[]
-]>
-expect.MatcherFunction<[min: number, max: number]>
-```
-
 ### Matchers
 
 A matcher accepts the actual value as its first argument, and any number of additional arguments for comparison.
@@ -90,7 +80,7 @@ function toMatch(actual: unknown, expected: unknown): jest.CustomMatcherResult {
     pass,
     message: pass
       ? () => `expected ${actual} to match ${expected}`
-        ? () => `expected ${actual} not to match ${expected}`
+      : () => `expected ${actual} not to match ${expected}`
   };
 }
 ```

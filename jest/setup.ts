@@ -2,7 +2,7 @@ import {
   setContaining,
   toBeISODate,
   toBeDivisibleBy,
-} from '@src/matchers';
+} from '@matchers';
 
 expect.extend({
   setContaining,

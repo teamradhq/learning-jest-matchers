@@ -1,9 +1,10 @@
 import type { Config } from 'jest';
+import { moduleNameMapper } from './jest/tools';
 
 const config: Config = {
   testEnvironment: 'node',
   clearMocks: true,
-  setupFilesAfterEnv: ['./jest.setup.ts'],
+  setupFilesAfterEnv: ['./jest/setup.ts'],
   collectCoverage: false,
   coverageDirectory: 'coverage',
   coverageReporters: [
@@ -22,11 +23,9 @@ const config: Config = {
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  moduleNameMapper: {
-    '^@src/(.*)': '<rootDir>/src/$1',
-  },
+  moduleNameMapper,
   collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
+    '**/*.{ts,tsx}',
     '!**/node_modules/**',
     '!**/vendor/**',
   ],

@@ -1,26 +1,34 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "ES2022",
     "module": "commonjs",
     "esModuleInterop": true,
     "sourceMap": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "types": [
       "node",
       "jest",
       "./types/index.d.ts"
     ],
     "paths": {
-      "@src/*": [
-        "./src/*"
+      "@/*": [
+        "./*"
+      ],
+      "@matchers": [
+        "./matchers/index.ts"
+      ],
+      "@matchers/*": [
+        "./matchers/*"
       ]
     }
   },
   "include": [
     "src/**/*.ts",
     "types/**/*.d.ts",
-    "./*.config.ts",
-    "./*.setup.ts"
+    "./jest/*.ts",
+    "./*.config.ts"
   ],
   "exclude": [
     "node_modules"
