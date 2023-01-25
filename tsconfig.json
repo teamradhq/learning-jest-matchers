@@ -25,7 +25,7 @@
     }
   },
   "include": [
-    "src/**/*.ts",
+    "matchers/**/*.ts",
     "types/**/*.d.ts",
     "./jest/*.ts",
     "./*.config.ts"

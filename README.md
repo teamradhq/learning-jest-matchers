@@ -107,5 +107,6 @@ expect.extend({
 ## References
 
 - [Jest Matchers](https://jestjs.io/docs/expect#expectextendmatchers)
+- [Jest Async Matchers](https://jestjs.io/docs/expect#async-matchers)
 - [Practical Guide to Custom Jest Matchers](https://redd.one/blog/practical-guide-to-custom-jest-matchers)
 - [Create Custom Jest Matchers to Test Like a Pro](https://everyday.codes/javascript/create-custom-jest-matchers-to-test-like-a-pro/)

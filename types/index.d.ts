@@ -39,6 +39,11 @@ declare namespace jest {
    */
   interface Matchers<R, T> {
     /**
+     * Used to test that a value is a valid ISO date string.
+     */
+    toBeISODate(): T;
+
+    /**
      * Used to test that a value is divisible by a `divisor`.
      *
      * @param divisor A non-zero number that `actual` should be divisible by.
@@ -46,9 +51,11 @@ declare namespace jest {
     toBeDivisibleBy(divisor: number): T;
 
     /**
-     * Used to test that a value is a valid ISO date string.
+     * Used to test that making a request to url returns the expected status.
+     *
+     * @param status
      */
-    toBeISODate(): T;
+    toRespondWithStatus(status: number): Promise<T>;
   }
 
   /**
@@ -57,7 +64,8 @@ declare namespace jest {
    */
   interface ExpectExtendMap {
     setContaining: OwnMatcher<[expected: unknown[]]>;
-    toBeDivisibleBy: OwnMatcher<[divisor: number]>;
     toBeISODate: OwnMatcher<[]>;
+    toBeDivisibleBy: OwnMatcher<[divisor: number]>;
+    toRespondWithStatus: OwnMatcher<[expected: number]>;
   }
 }
