@@ -1,3 +1,11 @@
-import * as matchers from '@src/matchers';
+import {
+  setContaining,
+  toBeISODate,
+  toBeDivisibleBy,
+} from '@src/matchers';
 
-expect.extend(matchers);
+expect.extend({
+  setContaining,
+  toBeISODate,
+  toBeDivisibleBy,
+});

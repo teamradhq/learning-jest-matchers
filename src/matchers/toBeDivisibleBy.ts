@@ -1,5 +1,8 @@
 /**
- * This is an example of a symmetric matcher.
+ * Asserts `actual` is divisible by `divisor`.
+ *
+ * This is an example of a symmetric matcher that performs a
+ * stricter comparison than an asymmetric matcher.
  *
  * @param actual
  * @param divisor

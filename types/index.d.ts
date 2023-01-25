@@ -20,17 +20,34 @@ type OwnMatcher<Params extends unknown[]> = (
 ) => jest.CustomMatcherResult;
 
 declare namespace jest {
+  /**
+   * These define the public call signature which describe how
+   * asymmetric matchers are used in tests.
+   */
   interface Expect {
+    /**
+     * Used to test that a value contains a sub-set.
+     *
+     * @param expected The expected sub-set.
+     */
     setContaining<T>(expected: T[]): Set<T>,
   }
 
   /**
    * These define the public call signature which describe how
-   * the matchers are used in tests.
+   * symmetric matchers are used in tests.
    */
   interface Matchers<R, T> {
+    /**
+     * Used to test that a value is divisible by a `divisor`.
+     *
+     * @param divisor A non-zero number that `actual` should be divisible by.
+     */
     toBeDivisibleBy(divisor: number): T;
 
+    /**
+     * Used to test that a value is a valid ISO date string.
+     */
     toBeISODate(): T;
   }
 

@@ -1,5 +1,8 @@
 /**
- * An example of an asymmetric matcher that matches a sub-set of a set.
+ * Asserts that `actual` contains the `expected` sub-set.
+ *
+ * This is an example of an asymmetric matcher that performs
+ * a looser comparison than a symmetric matcher.
  *
  * @param actual
  * @param expected
