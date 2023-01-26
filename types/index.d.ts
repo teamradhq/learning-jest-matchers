@@ -19,10 +19,19 @@ type OwnMatcher<Params extends unknown[]> = (
   ...params: Params,
 ) => jest.CustomMatcherResult;
 
+type AsyncMatcher<Params extends unknown[]> = (
+  this: jest.MatcherContext,
+  actual: unknown,
+  ...params: Params,
+) => Promise<jest.CustomMatcherResult>;
+
 declare namespace jest {
   /**
    * These define the public call signature which describe how
    * asymmetric matchers are used in tests.
+   *
+   * Providing docBlocks for defined properties will provide
+   * documentation within the test suites.
    */
   interface Expect {
     /**
@@ -36,6 +45,9 @@ declare namespace jest {
   /**
    * These define the public call signature which describe how
    * symmetric matchers are used in tests.
+   *
+   * Providing docBlocks for defined properties will provide
+   * documentation within the test suites.
    */
   interface Matchers<R, T> {
     /**
@@ -49,6 +61,11 @@ declare namespace jest {
      * @param divisor A non-zero number that `actual` should be divisible by.
      */
     toBeDivisibleBy(divisor: number): T;
+
+    /**
+     * Used to test that the helper function was called by a function.
+     */
+    toCallHelper(...args: unknown[]): T;
 
     /**
      * Used to test that making a request to url returns the expected status.
@@ -66,6 +83,7 @@ declare namespace jest {
     setContaining: OwnMatcher<[expected: unknown[]]>;
     toBeISODate: OwnMatcher<[]>;
     toBeDivisibleBy: OwnMatcher<[divisor: number]>;
-    toRespondWithStatus: OwnMatcher<[expected: number]>;
+    toCallHelper: OwnMatcher<[expected: unknown]>;
+    toRespondWithStatus: AsyncMatcher<[expected: number]>;
   }
 }

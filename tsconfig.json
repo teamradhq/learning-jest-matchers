@@ -16,6 +16,9 @@
       "@/*": [
         "./*"
       ],
+      "@lib/*": [
+        "./lib/*"
+      ],
       "@matchers": [
         "./matchers/index.ts"
       ],
@@ -25,6 +28,7 @@
     }
   },
   "include": [
+    "lib/**/*.ts",
     "matchers/**/*.ts",
     "types/**/*.d.ts",
     "./jest/*.ts",
