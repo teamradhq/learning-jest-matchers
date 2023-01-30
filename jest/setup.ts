@@ -3,6 +3,7 @@ import {
   toBeISODate,
   toBeDivisibleBy,
   toCallHelper,
+  toRespondWithContent,
   toRespondWithStatus,
 } from '@matchers';
 
@@ -11,5 +12,6 @@ expect.extend({
   toBeISODate,
   toBeDivisibleBy,
   toCallHelper,
+  toRespondWithContent,
   toRespondWithStatus,
 });

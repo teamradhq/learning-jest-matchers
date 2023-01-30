@@ -70,6 +70,13 @@ declare namespace jest {
     /**
      * Used to test that making a request to url returns the expected status.
      *
+     * @param content
+     */
+    toRespondWithContent(content: unknown): Promise<T>;
+
+    /**
+     * Used to test that the response body contains the expected content.
+     *
      * @param status
      */
     toRespondWithStatus(status: number): Promise<T>;
@@ -84,6 +91,7 @@ declare namespace jest {
     toBeISODate: OwnMatcher<[]>;
     toBeDivisibleBy: OwnMatcher<[divisor: number]>;
     toCallHelper: OwnMatcher<[expected: unknown]>;
+    toRespondWithContent: AsyncMatcher<[expected: unknown]>;
     toRespondWithStatus: AsyncMatcher<[expected: number]>;
   }
 }
